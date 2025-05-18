@@ -20,7 +20,7 @@ def get_color(level):
 
 def rotate_log_if_needed():
   if os.path.exists(LOG_FILE):
-    size_mb = os.path.getsize(LOG_FILE) / (124 * 124)
+    size_mb = os.path.getsize(LOG_FILE) / (1024 * 1024)
     if size_mb >= MAX_SIZE_MB:
       backup = f"logs_{int(datetime.now(timezone.utc).timestamp())}.txt"
       os.rename(LOG_FILE, backup)
